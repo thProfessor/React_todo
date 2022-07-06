@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Todo from "./Todo";
+import Lottie from "lottie-react";
+import loading from '../loading.json';
 
 const TodoList = ({todos,setTodos}) => {
     const [search,setSearch] = useState("");
@@ -20,7 +22,7 @@ const TodoList = ({todos,setTodos}) => {
 
             })
             .map((todo) => <Todo key={todo.id} todo={todo} handleDelete={handleDelete} />) 
-        :<h1>Add a todo to see</h1>          }
+        :  <Lottie animationData={loading} loop={true} />    }
         </div>
         </div>
     )
